@@ -14,7 +14,7 @@ var lokasyon = "İstanbul";
 lokasyon = "Ankara";
 console.log(lokasyon);
 
-// read-online değişken oluşturmak için;
+// read-only değişken oluşturmak için;
 const websitesi = "google.com";
 
 console.log(isim);
