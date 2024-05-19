@@ -25,6 +25,8 @@ let users = [
   },
 ];
 
+console.log(users[1].city);
+
 // let person1 = {
 //   name: "Tugay",
 //   surname: "Tuna",

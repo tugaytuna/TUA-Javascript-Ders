@@ -26,9 +26,7 @@ let person2 = {
 };
 
 // console.log(person1["age"]);
+console.log(person1);
 console.log(person1.name);
 
 console.log(person2.city);
-
-
-
