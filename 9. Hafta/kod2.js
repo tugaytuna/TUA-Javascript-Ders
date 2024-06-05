@@ -28,7 +28,7 @@ let ogrenciler = [
     admin: false,
     notlar: [70, 80, 75],
     enSevdigiDers: "Tarih",
-    enSevdigiProgramlamaDili: "C#",
+    enSevdigiProgramlamaDili: "JavaScript",
     ozellik1: "Spor Takımı Kaptanı",
     ozellik2: "Tiyatro Oyuncusu",
   },
@@ -39,7 +39,7 @@ let ogrenciler = [
     admin: true,
     notlar: [98, 94, 96],
     enSevdigiDers: "Kimya",
-    enSevdigiProgramlamaDili: "Java",
+    enSevdigiProgramlamaDili: "JavaScript",
     ozellik1: "Bilim Kulübü Başkanı",
     ozellik2: "Gönüllü Hayvansever",
   },
@@ -50,7 +50,7 @@ let ogrenciler = [
     admin: false,
     notlar: [82, 88, 79],
     enSevdigiDers: "Fizik",
-    enSevdigiProgramlamaDili: "Ruby",
+    enSevdigiProgramlamaDili: "C#",
     ozellik1: "Robotik Kulübü Üyesi",
     ozellik2: "Fotoğrafçılık Meraklısı",
   },
@@ -61,7 +61,7 @@ let ogrenciler = [
     admin: false,
     notlar: [91, 87, 93],
     enSevdigiDers: "Edebiyat",
-    enSevdigiProgramlamaDili: "Swift",
+    enSevdigiProgramlamaDili: "Python",
     ozellik1: "Yazarlık Kulübü Üyesi",
     ozellik2: "Gezi Tutkunu",
   },
@@ -72,7 +72,7 @@ let ogrenciler = [
     admin: false,
     notlar: [78, 84, 70],
     enSevdigiDers: "Coğrafya",
-    enSevdigiProgramlamaDili: "PHP",
+    enSevdigiProgramlamaDili: "Python",
     ozellik1: "Müzik Enstrümanlarına İlgili",
     ozellik2: "Gönüllü Çevreci",
   },
@@ -83,7 +83,7 @@ let ogrenciler = [
     admin: true,
     notlar: [97, 92, 99],
     enSevdigiDers: "Psikoloji",
-    enSevdigiProgramlamaDili: "Kotlin",
+    enSevdigiProgramlamaDili: "Javascript",
     ozellik1: "Drama Kulübü Başkanı",
     ozellik2: "Yoga Eğitmeni",
   },
@@ -94,7 +94,7 @@ let ogrenciler = [
     admin: false,
     notlar: [73, 81, 76],
     enSevdigiDers: "Müzik",
-    enSevdigiProgramlamaDili: "Go",
+    enSevdigiProgramlamaDili: "C#",
     ozellik1: "Gitar Virtüözü",
     ozellik2: "Bisiklet Tutkunu",
   },
@@ -102,22 +102,47 @@ let ogrenciler = [
 
 let toplamSinifOgrenci = [0, 0, 0, 0];
 
+let classStudents = [[], [], [], []];
+
 function ogrenciSinifBilgisiGetir() {
+  listeOlustur();
+
+  for (let i = 0; i < toplamSinifOgrenci.length; i++) {
+    console.log(9 + i + ". sınıf öğreni sayısı:", toplamSinifOgrenci[i]);
+  }
+}
+
+console.log(ogrenciler);
+
+function ogrenciSoyisimListele() {
+  listeOlustur();
+
+  console.log("9.sınıf öğrenciler:", classStudents[0]);
+  console.log("10.sınıf öğrenciler:", classStudents[1]);
+  console.log("11.sınıf öğrenciler:", classStudents[2]);
+  console.log("12.sınıf öğrenciler:", classStudents[3]);
+}
+function listeOlustur() {
   toplamSinifOgrenci = [0, 0, 0, 0];
+  classStudents = [[], [], [], []];
 
   ogrenciler.map((ogrenci) => {
     switch (ogrenci.sinif) {
       case 9:
         toplamSinifOgrenci[0] += 1;
+        classStudents[0].push(ogrenci.soyisim);
         break;
       case 10:
         toplamSinifOgrenci[1] += 1;
+        classStudents[1].push(ogrenci.soyisim);
         break;
       case 11:
         toplamSinifOgrenci[2] += 1;
+        classStudents[2].push(ogrenci.soyisim);
         break;
       case 12:
         toplamSinifOgrenci[3] += 1;
+        classStudents[3].push(ogrenci.soyisim);
         break;
       default:
         console.log("Bir hata ile karşılaşıldı.");
@@ -126,8 +151,30 @@ function ogrenciSinifBilgisiGetir() {
 
     //   console.log(ogrenci.sinif);
   });
-
-  for (let i = 0; i < toplamSinifOgrenci.length; i++) {
-    console.log(9 + i + ". sınıf öğreni sayısı:", toplamSinifOgrenci[i]);
-  }
 }
+
+// ogrenciSinifBilgisiGetir();
+
+// ogrenciler.map((item) => {
+//   if (item.isim == "Mehmet") {
+//     item.sinif = 10;
+//   }
+// });
+
+// ogrenciSinifBilgisiGetir();
+
+// ------------------------------------------------
+
+// let dizi1 = [];
+
+// ogrenciler.map((item) => {
+//   dizi1.push(item.enSevdigiProgramlamaDili + " " + item.sinif);
+// });
+
+// console.log(dizi1.sort());
+
+ogrenciler.map((item) => {
+  if (item.sinif == 11 && item.enSevdigiProgramlamaDili == "Python") {
+    console.log(item.isim, item.soyisim);
+  }
+});
