@@ -102,13 +102,6 @@ let ogrenciler = [
 
 let toplamSinifOgrenci = [0, 0, 0, 0];
 
-ogrenciSinifBilgisiGetir();
-
-// console.log(toplamSinifOgrenci[0], "Tane 9.sınıf öğrencisi var.");
-// console.log(toplamSinifOgrenci[1], "Tane 10.sınıf öğrencisi var.");
-// console.log(toplamSinifOgrenci[2], "Tane 11.sınıf öğrencisi var.");
-// console.log(toplamSinifOgrenci[3], "Tane 12.sınıf öğrencisi var.");
-
 function ogrenciSinifBilgisiGetir() {
   toplamSinifOgrenci = [0, 0, 0, 0];
 
@@ -138,6 +131,3 @@ function ogrenciSinifBilgisiGetir() {
     console.log(9 + i + ". sınıf öğreni sayısı:", toplamSinifOgrenci[i]);
   }
 }
-
-ogrenciSinifBilgisiGetir();
-ogrenciSinifBilgisiGetir();
