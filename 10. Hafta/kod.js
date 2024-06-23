@@ -104,14 +104,6 @@ let toplamSinifOgrenci = [0, 0, 0, 0];
 
 let classStudents = [[], [], [], []];
 
-function ogrenciSinifBilgisiGetir() {
-  listeOlustur();
-
-  for (let i = 0; i < toplamSinifOgrenci.length; i++) {
-    console.log(9 + i + ". sınıf öğreni sayısı:", toplamSinifOgrenci[i]);
-  }
-}
-
 console.log(ogrenciler);
 
 function ogrenciSoyisimListele() {
@@ -148,36 +140,11 @@ function listeOlustur() {
         console.log("Bir hata ile karşılaşıldı.");
         break;
     }
-
-    //   console.log(ogrenci.sinif);
   });
 }
-
-// ogrenciSinifBilgisiGetir();
-
-// ogrenciler.map((item) => {
-//   if (item.isim == "Mehmet") {
-//     item.sinif = 10;
-//   }
-// });
-
-// ogrenciSinifBilgisiGetir();
-
-// ------------------------------------------------
-
-// let dizi1 = [];
-
-// ogrenciler.map((item) => {
-//   dizi1.push(item.enSevdigiProgramlamaDili + " " + item.sinif);
-// });
-
-// console.log(dizi1.sort());
 
 ogrenciler.map((item) => {
   if (item.sinif == 11 && item.enSevdigiProgramlamaDili == "Python") {
     console.log(item.isim, item.soyisim);
   }
 });
-
-ogrenciSinifBilgisiGetir();
-ogrenciSoyisimListele();
