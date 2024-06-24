@@ -106,13 +106,25 @@ let classStudents = [[], [], [], []];
 
 console.log(ogrenciler);
 
-function ogrenciSoyisimListele() {
+function ogrenciSoyisimListele(option) {
   listeOlustur();
 
-  console.log("9.sınıf öğrenciler:", classStudents[0]);
-  console.log("10.sınıf öğrenciler:", classStudents[1]);
-  console.log("11.sınıf öğrenciler:", classStudents[2]);
-  console.log("12.sınıf öğrenciler:", classStudents[3]);
+  if (option == 1) {
+    console.log("9.sınıf öğrenciler:", classStudents[0].isim);
+    console.log("10.sınıf öğrenciler:", classStudents[1].isim);
+    console.log("11.sınıf öğrenciler:", classStudents[2].isim);
+    console.log("12.sınıf öğrenciler:", classStudents[3].isim);
+  } else if (option == 2) {
+    console.log("9.sınıf öğrenciler:", classStudents[0][0].ozellik1);
+    console.log("10.sınıf öğrenciler:", classStudents[1].ozellik1);
+    console.log("11.sınıf öğrenciler:", classStudents[2].ozellik1);
+    console.log("12.sınıf öğrenciler:", classStudents[3].ozellik1);
+  }
+
+  //   console.log("9.sınıf öğrenciler:", classStudents[0]);
+  //   console.log("10.sınıf öğrenciler:", classStudents[1]);
+  //   console.log("11.sınıf öğrenciler:", classStudents[2]);
+  //   console.log("12.sınıf öğrenciler:", classStudents[3]);
 }
 function listeOlustur() {
   toplamSinifOgrenci = [0, 0, 0, 0];
@@ -122,19 +134,19 @@ function listeOlustur() {
     switch (ogrenci.sinif) {
       case 9:
         toplamSinifOgrenci[0] += 1;
-        classStudents[0].push(ogrenci.soyisim);
+        classStudents[0].push(ogrenci);
         break;
       case 10:
         toplamSinifOgrenci[1] += 1;
-        classStudents[1].push(ogrenci.soyisim);
+        classStudents[1].push(ogrenci);
         break;
       case 11:
         toplamSinifOgrenci[2] += 1;
-        classStudents[2].push(ogrenci.soyisim);
+        classStudents[2].push(ogrenci);
         break;
       case 12:
         toplamSinifOgrenci[3] += 1;
-        classStudents[3].push(ogrenci.soyisim);
+        classStudents[3].push(ogrenci);
         break;
       default:
         console.log("Bir hata ile karşılaşıldı.");
@@ -143,8 +155,4 @@ function listeOlustur() {
   });
 }
 
-ogrenciler.map((item) => {
-  if (item.sinif == 11 && item.enSevdigiProgramlamaDili == "Python") {
-    console.log(item.isim, item.soyisim);
-  }
-});
+ogrenciSoyisimListele(2);
