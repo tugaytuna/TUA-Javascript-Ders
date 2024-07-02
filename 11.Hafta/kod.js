@@ -21,6 +21,7 @@ function button1Clicked() {
   console.log("buton tıklandı");
   altbasliklar[0].innerHTML = "JS ile Değiştirildi!";
   baslik.setAttribute("class", "dahaBuyuk");
+
   //   altbasliklar[0].setAttribute("class", "");
   //   baslik.remove();
 }
